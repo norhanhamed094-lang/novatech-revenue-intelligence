@@ -137,7 +137,7 @@ dateDiff({deal_created_date}, {deal_closed_date}, 'DD')
 
 Measures the number of days between deal creation and closing.
 
-Discount Percentage
+####Discount Percentage
 ifelse(
     {deal_stage} = 'Lost',
     null,
@@ -150,7 +150,7 @@ ifelse(
 
 Calculates the discount percentage for won deals.
 
-Deal Size Category
+####Deal Size Category
 ifelse(
     {deal_value} < 1000,
     'Small',
@@ -161,7 +161,7 @@ ifelse(
     'Enterprise'
 )
 
-Categorizes deals by value.
+####Categorizes deals by value.
 
 Campaign ROI
 ifelse(
@@ -172,32 +172,19 @@ ifelse(
 
 Measures marketing return relative to campaign spending.
 
-Total Product Spend
+####Total Product Spend
 {product_spend_tier1} +
 {product_spend_tier2} +
 {product_spend_tier3}
 
 Combines product spending categories.
 
-Lead Engagement Score
-ifelse({campaign_response} = 1, 1, 0) +
-ifelse({web_visits_per_month} >= 10, 1, 0) +
-ifelse({days_since_last_engagement} <= 30, 1, 0)
 
-Provides a simple measure of customer engagement.
-
-Resolution Time
-dateDiff({ticket_created_date}, {ticket_resolved_date}, 'HH')
-
-Calculates support ticket resolution time in hours.
-
-Unresolved tickets remain null rather than being treated as zero.
-
-Dashboard
+####Dashboard
 
 The final QuickSight dashboard contains three main views.
 
-1. Marketing Funnel
+###1. Marketing Funnel
 
 The Marketing Funnel provides visibility into campaign performance and customer engagement.
 
@@ -214,7 +201,7 @@ Campaign Name
 Campaign Channel
 Campaign Date
 Customer Segment
-2. Sales Pipeline
+###2. Sales Pipeline
 
 The Sales Pipeline provides an overview of sales performance and revenue generation.
 
@@ -237,7 +224,7 @@ Deal Stage
 
 Interactive filtering allows users to select deal outcomes and explore the corresponding product and customer-segment performance.
 
-3. Customer Health
+###3. Customer Health
 
 The Customer Health view focuses on customer support activity and potential account risk.
 
@@ -298,7 +285,7 @@ Some differences were identified between Q and dashboard calculations, demonstra
 
 For example, Q identified Partner Referral for one conversion-rate question, while the dashboard calculation identified Direct Mail. This difference was documented as part of the Q evaluation.
 
-Key Business Insights
+####Key Business Insights
 Marketing
 
 The overall campaign response rate is approximately 27.2%, indicating an opportunity to improve campaign engagement through better targeting and messaging.
@@ -317,7 +304,7 @@ High ticket volume combined with negative sentiment and high-value accounts can 
 
 These accounts should be prioritized for customer-success outreach and issue resolution to reduce potential churn and revenue loss.
 
-Recommendations
+####Recommendations
 
 Based on the analysis, NovaTech should:
 
@@ -379,7 +366,7 @@ novatech-revenue-intelligence/
     ├── executive-report.pdf
     ├── q-exploration-log.md
     └── verification-log.md
-Conclusion
+####Conclusion
 
 The NovaTech Revenue Intelligence project demonstrates how CRM, Marketing, and Support data can be integrated into a single business intelligence solution.
 
