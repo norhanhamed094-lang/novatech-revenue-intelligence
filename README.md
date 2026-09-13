@@ -132,7 +132,7 @@ Key preparation steps included:
 
 #### Days to Close
 
-```text
+
 dateDiff({deal_created_date}, {deal_closed_date}, 'DD')
 
 Measures the number of days between deal creation and closing.
